@@ -42,7 +42,7 @@ var _ = Describe("Out New Relic", func() {
 				typeVal := pluginMap["type"]
 				version := pluginMap["version"]
 				source := pluginMap["source"]
-				Expect(typeVal).To(Equal("fluent-bit"))
+				Expect(typeVal).To(Equal("xxxxxxfluent-bit"))
 				Expect(version).To(Equal(VERSION))
 				Expect(source).To(Equal("BARE-METAL"))
 			},
@@ -54,7 +54,7 @@ var _ = Describe("Out New Relic", func() {
 				inputTimestamp = output.FLBTime{
 					time.Now(),
 				}
-				expectedSource := "docker"
+				expectedSource := "xxxxxxdocker"
 				inputMap["log"] = "message"
 				os.Setenv("SOURCE", expectedSource)
 				foundOutput := prepareRecord(inputMap, inputTimestamp)
